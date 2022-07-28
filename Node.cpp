@@ -70,10 +70,10 @@ int main(){
     int n = 20;
 
     // Default (head)
-    Node head(2);
+    Node* head = new Node(2);
 
     // linker
-    Node* link = &head;
+    Node* link = head;
 
     // dynamically making Nodes and joining them
     while(n--){
@@ -84,10 +84,10 @@ int main(){
 
     // Getting first,last and n'th node and the length
  
-    firstNode = getFirstNode(&head);
-    lastNode = getLastNode(&head);
-    nthNode = getNode(&head,8);
-    length = getNodeLength(&head);
+    firstNode = getFirstNode(head);
+    lastNode = getLastNode(head);
+    nthNode = getNode(head,8);
+    length = getNodeLength(head);
 
     // Displaying
     
@@ -96,18 +96,18 @@ int main(){
     cout << "\nnth   Node : " << nthNode->getData();
     cout << "\nNode Length   : " << length;
     cout << "\nComplete Node : ";
-    printNodeElements(&head);
+    printNodeElements(head);
 
 
     // Bonus (Add new node)
-    insertNode(&head,100);
+    insertNode(head,100);
     
     // New Node
-    lastNode = getLastNode(&head);
+    lastNode = getLastNode(head);
     
     // Displaying New Node
     cout << "\nNew Node : " << lastNode->getData();
-    cout << "\nNew Length : " << getNodeLength(&head);
+    cout << "\nNew Length : " << getNodeLength(head);
 
 
 }

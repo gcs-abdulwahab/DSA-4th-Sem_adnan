@@ -56,3 +56,10 @@ int main(){
     s1.print();
 
 }
+
+/*
+Output Section:
+1 2 
+1   
+
+*/

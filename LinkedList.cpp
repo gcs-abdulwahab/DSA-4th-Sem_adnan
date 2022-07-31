@@ -101,3 +101,8 @@ int main(){
     l1.insertAtBeginning(0);
     l1.print();
 } 
+
+/*
+Output Section:
+0 1 2
+*/

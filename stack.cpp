@@ -10,24 +10,19 @@ class Stack{
             alloc();
             this->limit = 100;
         }
-
         Stack(int limit){
             alloc();
             this->limit = limit;
         }
-
         void alloc(){
             head = new Node(0,NULL);
             list = new LinkedList(head);
         }
+        bool isFull()       { return (list->getLength()==limit); }
+        bool isEmpty()      { return (list->isEmpty()); }
+        int top()           { return (list->getLast()->getData()); }
+        void print()        { list->print(); }
 
-        bool isFull(){
-            return (list->getLength()==limit);
-        }
-
-        bool isEmpty(){
-            return (list->isEmpty());
-        }
         bool push(int value){
             if (!isFull()){
                 list->insertAtLast(value);
@@ -47,14 +42,9 @@ class Stack{
             }
             return -9999;
         }
-        int top(){
-            return (list->getLast()->getData());
-        }
 
-        void print(){
-            list->print();
-        }
 };
+
 
 int main(){
     Stack s1;

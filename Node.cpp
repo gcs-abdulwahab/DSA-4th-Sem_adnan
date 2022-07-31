@@ -111,3 +111,15 @@ int main(){
 
 
 }
+
+/*
+Output Section:
+
+First Node : 2
+Last  Node : 0
+nth   Node : 13
+Node Length   : 21
+Complete Node : 2 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 
+New Node : 100
+New Length : 22
+*/

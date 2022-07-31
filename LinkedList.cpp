@@ -47,6 +47,7 @@ public:
     void print(){
         if (!isEmpty()){
             Node* temp = head;
+            temp = temp->getNext(); // bcz we don't want to print value of head
             while(temp != NULL){
                 cout << temp->getData() << ' ';
                 temp = temp->getNext();

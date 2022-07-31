@@ -21,6 +21,7 @@ class Stack{
         bool isFull()       { return (list->getLength()==limit); }
         bool isEmpty()      { return (list->isEmpty()); }
         int top()           { return (list->getLast()->getData()); }
+        int getLength()     { return (list->getLength()); }
         void print()        { list->print(); }
 
         bool push(int value){

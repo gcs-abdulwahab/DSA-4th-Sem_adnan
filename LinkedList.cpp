@@ -26,7 +26,7 @@ private:
 public:
     LinkedList() : head(NULL)   {}
     LinkedList(Node* head)      { setHead(head); }
-    bool isEmpty()              { return (head->getNext() == NULL); }
+    bool isEmpty()              { return (head == NULL); }
     void setHead(Node* head)    { this->head = head; }
     Node* getHead()             { return head; }
     Node* getFirst()            { return head; }
@@ -47,11 +47,13 @@ public:
     void print(){
         if (!isEmpty()){
             Node* temp = head;
-            temp = temp->getNext(); // bcz we don't want to print value of head
             while(temp != NULL){
                 cout << temp->getData() << ' ';
                 temp = temp->getNext();
             }
+        }
+        else{
+            cout<<"empty ?";
         }
     }
 
@@ -67,9 +69,9 @@ public:
     }
 
     void insertAtBeginning(int value){
-        Node* newNode = new Node(value);
-        newNode->setNext(head);
-        head = newNode;
+        Node* temp = new Node(value);
+        temp->setNext(head);
+        head = temp;
     }
 
     void insertAtLast(int value){
@@ -79,9 +81,9 @@ public:
     }
 
     void removeFromFirst(){
-        Node* newHead = head->getNext();
+        Node* temp = head->getNext();
         delete head;
-        head = newHead;
+        head = temp;
     }
 
     void removeFromLast(){
@@ -95,14 +97,16 @@ public:
 };
 
 int main(){
-    Node* head = new Node(1);
-    LinkedList l1(head);
-    l1.insertAtLast(2);
-    l1.insertAtBeginning(0);
+    
+    LinkedList l1;
+    // l1.insertAtLast(2);
+     l1.insertAtBeginning(0);
+     l1.insertAtBeginning(-1);
+     l1.insertAtBeginning(-2);
+        l1.insertAtBeginning(-3);
+     
+     l1.removeFromLast();
+    
+     
     l1.print();
 } 
-
-/*
-Output Section:
-0 1 2
-*/
